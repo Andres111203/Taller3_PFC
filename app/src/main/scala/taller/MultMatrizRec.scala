@@ -1,6 +1,6 @@
 package taller
 
-class MultMatriz() {
+class MultMatrizRec() {
 
     type Matriz = Vector[Vector[Int]]
 
@@ -32,13 +32,11 @@ class MultMatriz() {
             val b21 = subMatriz(m2, mitad, 0, mitad)
             val b22 = subMatriz(m2, mitad, mitad, mitad)
 
-            // Calcular submatrices del resultado
             val c11 = SumMatriz(multMatrizRec(a11, b11), multMatrizRec(a12, b21))
             val c12 = SumMatriz(multMatrizRec(a11, b12), multMatrizRec(a12, b22))
             val c21 = SumMatriz(multMatrizRec(a21, b11), multMatrizRec(a22, b21))
             val c22 = SumMatriz(multMatrizRec(a21, b12), multMatrizRec(a22, b22))
-
-            // Combinar submatrices en la matriz resultado
+            
             Vector.tabulate(n, n) { (i, j) =>
                 if (i < mitad && j < mitad) c11(i)(j)
                 else if (i < mitad && j >= mitad) c12(i)(j - mitad)
