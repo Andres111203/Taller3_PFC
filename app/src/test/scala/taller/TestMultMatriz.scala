@@ -7,7 +7,7 @@ import org.scalatestplus.junit.JUnitRunner
 @RunWith(classOf[JUnitRunner])
 class MultMatrizTest extends AnyFunSuite {
     
-    val multMatriz = new MultMatriz()
+    val multMatriz = new MultMatrizRecc()
     
     test("Multiplicación de matrices 1x1") {
         val m1 = Vector(Vector(2))
