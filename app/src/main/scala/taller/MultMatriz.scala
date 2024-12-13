@@ -2,6 +2,7 @@ package taller
 
 class MultMatriz () {
 
+    type Matriz = Vector[Vector[Int]]
     def multMatrizRec(m1: Matriz, m2: Matriz): Matriz = {
         val n = m1.length
         
